@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 7f32cbb9316e5ce4a980ebfa87ce2b0a
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst ObjectPool_1 = require(\"./ObjectPool\");\r\nclass
+    GetFromObjectPool extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
+    {\r\n        // let go: GameObject = ObjectPool.Instance.GetObject(`PoolObject`);\r\n   
+    }\r\n    Update() {\r\n        if (UnityEngine_1.Input.GetKeyDown(UnityEngine_1.KeyCode.A))
+    {\r\n            this.go = ObjectPool_1.default.Instance.GetObject(`PoolObject`);\r\n       
+    }\r\n        if (UnityEngine_1.Input.GetKeyDown(UnityEngine_1.KeyCode.D)) {\r\n           
+    ObjectPool_1.default.Instance.ReturnObject(`PoolObject`, this.go);\r\n       
+    }\r\n    }\r\n}\r\nexports.default = GetFromObjectPool;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR2V0RnJvbU9iamVjdFBvb2wuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJHZXRGcm9tT2JqZWN0UG9vbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUF5RDtBQUN6RCxpREFBcUQ7QUFDckQsNkNBQXFDO0FBRXJDLE1BQXFCLGlCQUFrQixTQUFRLHFDQUFxQjtJQUloRSxLQUFLO1FBRUQsb0VBQW9FO0lBQ3hFLENBQUM7SUFFRCxNQUFNO1FBRUYsSUFBRyxtQkFBSyxDQUFDLFVBQVUsQ0FBQyxxQkFBTyxDQUFDLENBQUMsQ0FBQyxFQUM5QjtZQUNJLElBQUksQ0FBQyxFQUFFLEdBQUcsb0JBQVUsQ0FBQyxRQUFRLENBQUMsU0FBUyxDQUFDLFlBQVksQ0FBQyxDQUFDO1NBQ3pEO1FBRUQsSUFBRyxtQkFBSyxDQUFDLFVBQVUsQ0FBQyxxQkFBTyxDQUFDLENBQUMsQ0FBQyxFQUM5QjtZQUNJLG9CQUFVLENBQUMsUUFBUSxDQUFDLFlBQVksQ0FBQyxZQUFZLEVBQUUsSUFBSSxDQUFDLEVBQUUsQ0FBQyxDQUFDO1NBQzNEO0lBQ0wsQ0FBQztDQUVKO0FBdEJELG9DQXNCQyJ9","assetPath":"Assets/GetFromObjectPool.ts","manifest":{"properties":[],"name":"GetFromObjectPool","description":""},"isCompiled":true}'
+  typescriptHash: e7b1f8071001500c3f12dfa1d4487811
+  onlyWriteTrigger: 0

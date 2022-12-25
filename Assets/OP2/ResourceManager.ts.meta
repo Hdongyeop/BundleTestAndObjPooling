@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: 72d0ce423ce31214380092b7f9e301de
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Poolable_1 = require(\"./Poolable\");\r\nconst
+    PoolManager_1 = require(\"./PoolManager\");\r\nclass ResourceManager extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    static GetInstance() {\r\n       
+    if (!ResourceManager.instance) {\r\n            const targetObj = UnityEngine_1.GameObject.Find(\"@ResourceManager\");\r\n           
+    if (targetObj)\r\n                ResourceManager.instance = targetObj.GetComponent($typeof(ResourceManager));\r\n       
+    }\r\n        return ResourceManager.instance;\r\n    }\r\n    //#endregion\r\n   
+    Instantiate(path, parent) {\r\n        let original = UnityEngine_1.Resources.Load(path);\r\n       
+    if (!original)\r\n            return null;\r\n        if (original.GetComponent($typeof(Poolable_1.default)))\r\n           
+    return PoolManager_1.default.GetInstance().Pop(original).gameObject;\r\n       
+    let go = UnityEngine_1.GameObject.Instantiate(original, parent);\r\n        go.name
+    = original.name;\r\n        return go;\r\n    }\r\n    Destroy(go) {\r\n       
+    if (!go)\r\n            return;\r\n        let poolable = go.GetComponent($typeof(Poolable_1.default));\r\n       
+    if (poolable) {\r\n            PoolManager_1.default.GetInstance().Push(poolable);\r\n           
+    return;\r\n        }\r\n        UnityEngine_1.GameObject.Destroy(go);\r\n   
+    }\r\n}\r\nexports.default = ResourceManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUmVzb3VyY2VNYW5hZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiUmVzb3VyY2VNYW5hZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQStEO0FBQy9ELGlEQUFxRDtBQUNyRCx5Q0FBa0M7QUFDbEMsK0NBQXdDO0FBRXhDLE1BQXFCLGVBQWdCLFNBQVEscUNBQXFCO0lBTTlELE1BQU0sQ0FBQyxXQUFXO1FBRWQsSUFBRyxDQUFDLGVBQWUsQ0FBQyxRQUFRLEVBQzVCO1lBQ0ksTUFBTSxTQUFTLEdBQUcsd0JBQVUsQ0FBQyxJQUFJLENBQUMsa0JBQWtCLENBQUMsQ0FBQztZQUN0RCxJQUFJLFNBQVM7Z0JBQUUsZUFBZSxDQUFDLFFBQVEsR0FBRyxTQUFTLENBQUMsWUFBWSxTQUFDLGVBQWUsRUFBRyxDQUFDO1NBQ3ZGO1FBRUQsT0FBTyxlQUFlLENBQUMsUUFBUSxDQUFDO0lBQ3BDLENBQUM7SUFFRCxZQUFZO0lBRVosV0FBVyxDQUFDLElBQVksRUFBRSxNQUFpQjtRQUV2QyxJQUFJLFFBQVEsR0FBRyx1QkFBUyxDQUFDLElBQUksQ0FBYSxJQUFJLENBQUMsQ0FBQztRQUNoRCxJQUFHLENBQUMsUUFBUTtZQUFFLE9BQU8sSUFBSSxDQUFDO1FBRTFCLElBQUcsUUFBUSxDQUFDLFlBQVksU0FBQyxrQkFBUTtZQUM3QixPQUFPLHFCQUFXLENBQUMsV0FBVyxFQUFFLENBQUMsR0FBRyxDQUFDLFFBQVEsQ0FBQyxDQUFDLFVBQVUsQ0FBQztRQUU5RCxJQUFJLEVBQUUsR0FBZSx3QkFBVSxDQUFDLFdBQVcsQ0FBQyxRQUFRLEVBQUUsTUFBTSxDQUFlLENBQUM7UUFDNUUsRUFBRSxDQUFDLElBQUksR0FBRyxRQUFRLENBQUMsSUFBSSxDQUFDO1FBRXhCLE9BQU8sRUFBRSxDQUFDO0lBQ2QsQ0FBQztJQUVELE9BQU8sQ0FBQyxFQUFjO1FBRWxCLElBQUcsQ0FBQyxFQUFFO1lBQUUsT0FBTztRQUVmLElBQUksUUFBUSxHQUFhLEVBQUUsQ0FBQyxZQUFZLFNBQUMsa0JBQVEsRUFBRyxDQUFDO1FBQ3JELElBQUcsUUFBUSxFQUNYO1lBQ0kscUJBQVcsQ0FBQyxXQUFXLEVBQUUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLENBQUM7WUFDekMsT0FBTztTQUNWO1FBRUQsd0JBQVUsQ0FBQyxPQUFPLENBQUMsRUFBRSxDQUFDLENBQUM7SUFDM0IsQ0FBQztDQUNKO0FBOUNELGtDQThDQyJ9","assetPath":"Assets/ResourceManager.ts","manifest":{"properties":[],"name":"ResourceManager","description":""},"isCompiled":true}'
+  typescriptHash: cb3e8682bd88e90a399a7cd09c8af531
+  onlyWriteTrigger: 0

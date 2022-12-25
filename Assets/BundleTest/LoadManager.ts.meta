@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 55337b8ac8575f84a8126a0dfc1d424f
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nclass LoadManager extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    Start() {\\r\\n        console.log(`test1`);\\r\\n       
+    let asset = UnityEngine_1.AssetBundle.LoadFromFile(\\\"Bundle/bird\\\");\\r\\n       
+    console.log(`test2`);\\r\\n        if (!asset) {\\r\\n            console.log(`Bundle
+    \uD3F4\uB354\uC5D0 \uC5D0\uC14B\uBC88\uB4E4\uC774 \uC5C6\uC2B5\uB2C8\uB2E4`);\\r\\n           
+    return;\\r\\n        }\\r\\n        let bird = asset.LoadAsset(`Omoknuni`);\\r\\n       
+    let img = UnityEngine_1.GameObject.Instantiate(bird);\\r\\n        img.transform.position
+    = UnityEngine_1.Vector3.zero;\\r\\n    }\\r\\n}\\r\\nexports.default = LoadManager;\\r\\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTG9hZE1hbmFnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJMb2FkTWFuYWdlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUE4RDtBQUM5RCxpREFBcUQ7QUFFckQsTUFBcUIsV0FBWSxTQUFRLHFDQUFxQjtJQUUxRCxLQUFLO1FBRUQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFPLENBQUMsQ0FBQztRQUVyQixJQUFJLEtBQUssR0FBZ0IseUJBQVcsQ0FBQyxZQUFZLENBQUMsYUFBYSxDQUFDLENBQUM7UUFFakUsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFPLENBQUMsQ0FBQztRQUdyQixJQUFHLENBQUMsS0FBSyxFQUNUO1lBQ0ksT0FBTyxDQUFDLEdBQUcsQ0FBQyx1QkFBdUIsQ0FBQyxDQUFDO1lBQ3JDLE9BQU87U0FDVjtRQUVELElBQUksSUFBSSxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQWEsVUFBVSxDQUFDLENBQUM7UUFDbkQsSUFBSSxHQUFHLEdBQUcsd0JBQVUsQ0FBQyxXQUFXLENBQUMsSUFBSSxDQUFlLENBQUM7UUFDckQsR0FBRyxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcscUJBQU8sQ0FBQyxJQUFJLENBQUM7SUFDMUMsQ0FBQztDQUVKO0FBdEJELDhCQXNCQyJ9\",\"assetPath\":\"Assets/LoadManager.ts\",\"manifest\":{\"properties\":[],\"name\":\"LoadManager\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 086ef156fb1dbf1fc06c0ae35d76a2e5
+  onlyWriteTrigger: 0

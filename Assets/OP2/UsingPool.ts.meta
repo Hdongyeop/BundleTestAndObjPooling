@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: c95ebc7fd7a174e409a7ec90097591dd
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst PoolManager_1 = require(\"./PoolManager\");\r\nconst
+    ResourceManager_1 = require(\"./ResourceManager\");\r\nclass UsingPool extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n        this.golist
+    = new Array();\r\n    }\r\n    Update() {\r\n        if (UnityEngine_1.Input.GetKeyDown(UnityEngine_1.KeyCode.L))
+    {\r\n            this.golist.push(ResourceManager_1.default.GetInstance().Instantiate(`ObjectPool/PoolObject`,
+    null));\r\n        }\r\n        if (UnityEngine_1.Input.GetKeyDown(UnityEngine_1.KeyCode.O))
+    {\r\n            ResourceManager_1.default.GetInstance().Destroy(this.golist.pop());\r\n       
+    }\r\n    }\r\n}\r\nexports.default = UsingPool;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVXNpbmdQb29sLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVXNpbmdQb29sLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXdEO0FBQ3hELGlEQUFxRDtBQUNyRCwrQ0FBdUM7QUFDdkMsdURBQStDO0FBRS9DLE1BQXFCLFNBQVUsU0FBUSxxQ0FBcUI7SUFJeEQsS0FBSztRQUNELElBQUksQ0FBQyxNQUFNLEdBQUcsSUFBSSxLQUFLLEVBQWMsQ0FBQztJQUMxQyxDQUFDO0lBRUQsTUFBTTtRQUVGLElBQUcsbUJBQUssQ0FBQyxVQUFVLENBQUMscUJBQU8sQ0FBQyxDQUFDLENBQUMsRUFDOUI7WUFDRSxJQUFJLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyx5QkFBZSxDQUFDLFdBQVcsRUFBRSxDQUFDLFdBQVcsQ0FBQyx1QkFBdUIsRUFBRSxJQUFJLENBQUMsQ0FBQyxDQUFDO1NBQzVGO1FBRUQsSUFBRyxtQkFBSyxDQUFDLFVBQVUsQ0FBQyxxQkFBTyxDQUFDLENBQUMsQ0FBQyxFQUM5QjtZQUNJLHlCQUFlLENBQUMsV0FBVyxFQUFFLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsR0FBRyxFQUFFLENBQUMsQ0FBQztTQUM1RDtJQUNMLENBQUM7Q0FDSjtBQXBCRCw0QkFvQkMifQ==","assetPath":"Assets/UsingPool.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"golist","type":"UnityEngine.GameObject[]","isArray":true,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"UsingPool","description":""},"isCompiled":true}'
+  typescriptHash: e66dcd406eaa3606f1b4425b4b8f4cf9
+  onlyWriteTrigger: 0

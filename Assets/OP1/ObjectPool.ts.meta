@@ -1,0 +1,46 @@
+fileFormatVersion: 2
+guid: afb59dd34fd57224d84899ac49640cf2
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\n/**\\r\\n *  \uC624\uBE0C\uC81D\uD2B8
+    \uD480\uB9C1 \uADDC\uCE59!\\r\\n *  \uD504\uB9AC\uD339 \uC774\uB984\uACFC Inspector
+    \uCC3D\uC5D0\uC11C string Nanme \uAC12 \uD1B5\uC77C\\r\\n *  Resources/ObjectPool
+    \uC548\uC5D0 \uD504\uB9AC\uD339 \uB123\uC5B4 \uB193\uAE30!!\\r\\n */\\r\\nclass
+    ObjectPool extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    Awake() {\\r\\n       
+    ObjectPool.Instance = this;\\r\\n        this.objectPoolDic = new Map();\\r\\n       
+    this.poolingObjectQueues = new Map();\\r\\n        UnityEngine_1.Debug.Log(this.objectPoolPrefab.length);\\r\\n       
+    for (let i = 0; i < this.objectPoolPrefab.length; i++) {\\r\\n            this.objectPoolDic.set(this.objectPoolPrefab[i],
+    UnityEngine_1.Resources.Load(`ObjectPool/${this.objectPoolPrefab[i]}`));\\r\\n           
+    this.poolingObjectQueues.set(this.objectPoolPrefab[i], new Array());\\r\\n           
+    UnityEngine_1.Debug.Log(\\\"object Pool\\\" + i);\\r\\n        }\\r\\n    }\\r\\n   
+    CreateNewObject(name) {\\r\\n        let newObj = UnityEngine_1.GameObject.Instantiate(this.objectPoolDic.get(name));\\r\\n       
+    newObj.gameObject.SetActive(false);\\r\\n        newObj.transform.SetParent(this.transform);\\r\\n       
+    return newObj;\\r\\n    }\\r\\n    GetObject(name) {\\r\\n        if (this.poolingObjectQueues.get(name).length
+    > 0) {\\r\\n            let obj = this.poolingObjectQueues.get(name).pop();\\r\\n           
+    obj.transform.SetParent(null);\\r\\n            return obj;\\r\\n        }\\r\\n       
+    else //\uBE44\uC5B4\uC788\uC73C\uBA74 \uC0C8\uB85C \uC0DD\uC131\\r\\n        
+    {\\r\\n            var newObj = this.CreateNewObject(name);\\r\\n           
+    newObj.transform.SetParent(null);\\r\\n            return newObj;\\r\\n       
+    }\\r\\n    }\\r\\n    ReturnObject(name, obj) {\\r\\n        obj.gameObject.SetActive(false);\\r\\n       
+    obj.transform.SetParent(this.transform);\\r\\n        this.poolingObjectQueues.get(name).unshift(obj);\\r\\n   
+    }\\r\\n}\\r\\nexports.default = ObjectPool;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiT2JqZWN0UG9vbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIk9iamVjdFBvb2wudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBMkQ7QUFFM0QsaURBQXFEO0FBR3JEOzs7O0dBSUc7QUFDSCxNQUFxQixVQUFXLFNBQVEscUNBQXFCO0lBUXpELEtBQUs7UUFFRCxVQUFVLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQztRQUUzQixJQUFJLENBQUMsYUFBYSxHQUFHLElBQUksR0FBRyxFQUFxQixDQUFDO1FBQ2xELElBQUksQ0FBQyxtQkFBbUIsR0FBRyxJQUFJLEdBQUcsRUFBNEIsQ0FBQztRQUUvRCxtQkFBSyxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsZ0JBQWdCLENBQUMsTUFBTSxDQUFDLENBQUM7UUFDeEMsS0FBSSxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUcsQ0FBQyxHQUFFLElBQUksQ0FBQyxnQkFBZ0IsQ0FBQyxNQUFNLEVBQUMsQ0FBQyxFQUFFLEVBQ25EO1lBQ0ksSUFBSSxDQUFDLGFBQWEsQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLGdCQUFnQixDQUFDLENBQUMsQ0FBQyxFQUFFLHVCQUFTLENBQUMsSUFBSSxDQUFhLGNBQWMsSUFBSSxDQUFDLGdCQUFnQixDQUFDLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDO1lBQ3ZILElBQUksQ0FBQyxtQkFBbUIsQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLGdCQUFnQixDQUFDLENBQUMsQ0FBQyxFQUFHLElBQUksS0FBSyxFQUFjLENBQUMsQ0FBQztZQUNqRixtQkFBSyxDQUFDLEdBQUcsQ0FBQyxhQUFhLEdBQUcsQ0FBQyxDQUFDLENBQUM7U0FDaEM7SUFFTCxDQUFDO0lBR08sZUFBZSxDQUFDLElBQVc7UUFHL0IsSUFBSSxNQUFNLEdBQUcsd0JBQVUsQ0FBQyxXQUFXLENBQUMsSUFBSSxDQUFDLGFBQWEsQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQWUsQ0FBQztRQUVoRixNQUFNLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUMsQ0FBQztRQUVuQyxNQUFNLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUM7UUFFM0MsT0FBTyxNQUFNLENBQUM7SUFDbEIsQ0FBQztJQUVELFNBQVMsQ0FBQyxJQUFXO1FBRWpCLElBQUksSUFBSSxDQUFDLG1CQUFtQixDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsQ0FBQyxNQUFNLEdBQUcsQ0FBQyxFQUFFO1lBQy9DLElBQUksR0FBRyxHQUFHLElBQUksQ0FBQyxtQkFBbUIsQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQUMsR0FBRyxFQUFFLENBQUM7WUFDbkQsR0FBRyxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLENBQUM7WUFDOUIsT0FBTyxHQUFHLENBQUM7U0FDZDthQUNJLGFBQWE7U0FDbEI7WUFDSSxJQUFJLE1BQU0sR0FBRyxJQUFJLENBQUMsZUFBZSxDQUFDLElBQUksQ0FBQyxDQUFDO1lBQ3hDLE1BQU0sQ0FBQyxTQUFTLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxDQUFDO1lBQ2pDLE9BQU8sTUFBTSxDQUFDO1NBQ2pCO0lBQ0wsQ0FBQztJQUVNLFlBQVksQ0FBQyxJQUFXLEVBQUcsR0FBYztRQUU1QyxHQUFHLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUMsQ0FBQztRQUNoQyxHQUFHLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUM7UUFDeEMsSUFBSSxDQUFDLG1CQUFtQixDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsQ0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLENBQUM7SUFDcEQsQ0FBQztDQUdKO0FBN0RELDZCQTZEQyJ9\",\"assetPath\":\"Assets/ObjectPool.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"mscorlib\",\"name\":\"objectPoolPrefab\",\"type\":\"System.String[]\",\"isArray\":true,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"SerializeField\",\"args\":[]}]}],\"name\":\"ObjectPool\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 3b5f1a837f02b36f476dd825947691ca
+  onlyWriteTrigger: 0
